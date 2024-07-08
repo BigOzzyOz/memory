@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Slab';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #ecf4fb 0%, #fbecec 50%, #ecfbf3 100%);
+}
+
+#limiter {
+  height: 100dvh;
+  width: 100dvw;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #ecf4fb 0%, #fbecec 50%, #ecfbf3 100%);
+}
+
+header,
+footer {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  height: 4%;
+  align-items: flex-end;
+}
+
+header img {
+  width: auto;
+  max-height: 80%;
+}
+
+main {
+  width: 100%;
+  height: 88%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 10% 90%;
+  grid-template-areas: 'menu' 'gamebord';
+}
+
+.menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.mainMenu,
+.gameStats {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.mainMenu button {
+  width: 240px;
+  border: unset;
+  background-color: rgba(217, 71, 71, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+#gamebord {
+  height: 100%;
+  width: 100%;
+  grid-area: gamebord;
+  display: grid;
+  gap: 8px;
+  background-color: #ecf4fb;
+}
+
+.gamebord2x2 {
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.gamebord4x4 {
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+.gamebord6x6 {
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
+}
+
+.gamebord8x8 {
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+}
+
+.gamebord10x10 {
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+  height: 100%;
+  width: 100%;
+}
