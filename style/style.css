@@ -48,7 +48,7 @@ main {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 10% 90%;
-  grid-template-areas: 'menu' 'gamebord';
+  grid-template-areas: 'menu' 'gameBoard';
 }
 
 .menu {
@@ -77,45 +77,92 @@ main {
   box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.25);
 }
 
-#gamebord {
+#gameBoard {
   height: 100%;
   width: 100%;
-  grid-area: gamebord;
+  grid-area: gameBoard;
   display: grid;
-  gap: 8px;
-  background-color: #ecf4fb;
+  background-color: #7d9ebb;
+  justify-items: center;
+  align-items: center;
 }
 
-.gamebord2x2 {
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+.gameBoard2x2 {
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
 }
 
-.gamebord4x4 {
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto auto;
+.gameBoard4x4 {
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
 }
 
-.gamebord6x6 {
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto auto;
+.gameBoard6x6 {
+  grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+  grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
 }
 
-.gamebord8x8 {
-  grid-template-columns: auto auto auto auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto auto auto auto;
+.gameBoard8x8 {
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }
 
-.gamebord10x10 {
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+.gameBoard10x10 {
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
-.card {
+.flip-card {
+  background-color: transparent;
+  max-width: 100;
+  height: 95%;
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+} */
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: azure;
-  height: 100%;
-  width: 100%;
+}
+
+.flip-card-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+
+.flip-card-back {
+  background-color: #ffa6a2;
+  border: thick solid white;
+  padding: 8%;
+  transform: rotateY(180deg);
 }
